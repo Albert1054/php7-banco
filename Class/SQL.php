@@ -4,9 +4,9 @@ class SQL extends PDO{
 
 	private $conn;
 
-	public function __construct(){
+	public function __construct($tipoBanco, $user, $password){
 
-		$this->conn = new PDO("mysql:dbname=bdphp7;host=localhost", "root", "");
+		$this->conn = new PDO($tipoBanco, $user, $password);
 	}
 
 
