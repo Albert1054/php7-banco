@@ -2,11 +2,23 @@
 
 require_once("config.php");
 
-$sql = new SQL("mysql:dbname=bdphp7;host=localhost", "root", "");
+/*$root = new Usuario();
 
-$result = $sql->select("SELECT * FROM tb_usuario order by deslogin", array());
+$root->loadById(1);
+echo $root;*/
 
-echo json_encode($result);
+/*$root = Usuario::getList();
 
+echo json_encode($root);*/
+
+/*$root = Usuario::search("Ana");
+
+echo json_encode($root);*/
+
+/*$root = new Usuario();
+
+$root->login("root","123456");
+
+echo $root;*/
 
  ?>
