@@ -8,7 +8,6 @@ class Usuario {
 	private $dessenha;
 	private $dtcadastro;
 
-
 	public function getIdusuario(){
 		return $this->idusuario;
 	}
@@ -40,7 +39,7 @@ class Usuario {
 
 	public function loadById($id){
 
-		$sql = new SQL("mysql:dbname=bdphp7;host=localhost", "root", "");
+		$sql = new SQL(MYSQL);
 
 		$result = $sql->select("SELECT * FROM tb_usuario WHERE idusuario = :ID", array(":ID" =>$id));
 
@@ -59,7 +58,7 @@ class Usuario {
 
 	public static function getList(){
 
-		$sql = new SQL("mysql:dbname=bdphp7;host=localhost", "root", "");
+		$sql = new SQL(MYSQL);
 
 		return $sql->select("SELECT * FROM tb_usuario ORDER BY deslogin", array());
 
@@ -67,15 +66,15 @@ class Usuario {
 
 	public static function search($login){
 
-		$sql = new SQL("mysql:dbname=bdphp7;host=localhost", "root", "");
+		$sql = new SQL(MYSQL);
 
-		return $sql->select("SELECT * FROM tb_usuario WHERE deslogin = :SEARCH ORDER BY deslogin", array(":SEARCH"=>"%".$login."%"));
+		return $sql->select("SELECT * FROM tb_usuario WHERE deslogin LIKE :SEARCH ORDER BY deslogin", array(":SEARCH"=>"%".$login."%"));
 
 	}
 
 	public function login($login, $password){
 
-		$sql = new SQL("mysql:dbname=bdphp7;host=localhost", "root", "");
+		$sql = new SQL(MYSQL);
 
 		$result = $sql->select("SELECT * FROM tb_usuario WHERE deslogin = :LOGIN AND dessenha = :PASSWORD", 
 			array(":LOGIN"=>$login, ":PASSWORD"=>$password)); 

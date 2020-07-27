@@ -13,4 +13,12 @@ spl_autoload_register(function($className){
 
 });
 
+define("MYSQL", [
+
+	"mysql:dbname=bdphp7;host=localhost",
+	"root",
+	""
+
+]);
+
  ?>

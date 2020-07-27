@@ -21,4 +21,8 @@ $root->login("root","123456");
 
 echo $root;*/
 
+$root = Usuario::search("a");
+
+echo json_encode($root);
+
  ?>

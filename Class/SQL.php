@@ -4,9 +4,9 @@ class SQL extends PDO{
 
 	private $conn;
 
-	public function __construct($tipoBanco, $user, $password){
+	public function __construct($tipoBanco = array()){
 
-		$this->conn = new PDO($tipoBanco, $user, $password);
+		$this->conn = new PDO($tipoBanco[0], $tipoBanco[1], $tipoBanco[2]);
 	}
 
 
