@@ -21,8 +21,27 @@ $root->login("root","123456");
 
 echo $root;*/
 
-$root = Usuario::search("a");
+/*$usuario = new Usuario();
+$usuario->setDeslogin("Maria");
+$usuario->setDessenha("&&8484");
 
-echo json_encode($root);
+$usuario->insert();
+
+echo $usuario;*/
+
+/*$user = new Usuario();
+
+$user->loadById(8);
+
+$user->update("Lucas", "85856");
+
+echo $user;*/
+
+$user = new Usuario();
+
+$user->loadById(9);
+
+echo $user;
+
 
  ?>
